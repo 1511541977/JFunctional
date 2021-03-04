@@ -13,7 +13,7 @@
     <groupId>com.zeng.extension</groupId>
     <artifactId>functional</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Functional</name>
+    <name>JFunctional</name>
     <description>Functional Interface Extension</description>
 
     <properties>
