@@ -11,8 +11,8 @@
     </parent>
 
     <groupId>com.zeng.extension</groupId>
-    <artifactId>functional</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>jfunctional</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
     <name>JFunctional</name>
     <description>Functional Interface Extension</description>
 
