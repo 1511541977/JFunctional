@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.zeng.extension</groupId>
+    <groupId>com.github.jazng</groupId>
     <artifactId>jfunctional</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>JFunctional</name>
