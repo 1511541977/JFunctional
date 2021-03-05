@@ -1,11 +1,8 @@
 # JFunctional
-
 JFunctional，可以抛异常的函数式接口，是对Java内置的函数式接口的补充！
 
 # Get Start
-
 ## 说明：
-
 1、我们经常会使用CompletableFuture来开启线程，CompletableFuture的supplyAsync()方法的参数是一个Supplier(函数式接口)。
 
 2、当我们在线程中遇到了异常时，由于Supplier中的get()方法是无法抛出异常的，对于编译时的异常，通常我们都会在Lambda表达式中写try-catch来捕获异常，但是当我们开启许多线程的时候，就需要在每个线程中都使用try-catch来捕获异常，非常的不方便，也不美观！
@@ -109,7 +106,7 @@ public interface Supplier<T> {
 }
 ```
 
-###### 2、JSupplier与Supplier基本上是一模一样，只不过JSupplier的抽象方法可以抛异常
+#### 2、JSupplier与Supplier基本上是一模一样，只不过JSupplier的抽象方法可以抛异常
 
 ```
 @FunctionalInterface
@@ -166,9 +163,7 @@ public interface JSupplier<T> {
 
 ***可见get()方法是可以抛异常的，其它的和Supplier基本上是一致的，JSupplier中还提供了两个重载的allowThrowException()方法，参数是JSupplier实现类对象，返回的是Supplier实现类对象，此方法会直接将异常抛出来***
 
-
-
-例：将上面的例子修改为使用JSupplier
+#### 3、将上面的例子修改为使用JSupplier
 
 ```java
 ExecutorService executor = new ThreadPoolExecutor(5, 10, 5000,
