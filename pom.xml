@@ -31,6 +31,36 @@
             <artifactId>lombok</artifactId>
             <version>1.18.18</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.sonatype.oss</groupId>
+            <artifactId>oss-parent</artifactId>
+            <version>9</version>
+            <type>pom</type>
+        </dependency>
     </dependencies>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:Jazng/JFunctional.git</url>
+        <connection>scm:git@github.com:Jazng/JFunctional.git</connection>
+        <developerConnection>scm:git@github.com:Jazng/JFunctional.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Jazng</name>
+            <email>1511541977@qq.com</email>
+            <organization>Jazng</organization>
+        </developer>
+    </developers>
 
 </project>
