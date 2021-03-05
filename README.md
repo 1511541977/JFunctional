@@ -16,22 +16,22 @@ JFunctional，可以抛异常的函数式接口，是对Java内置的函数式�
 
 ```java
 ExecutorService executor = new ThreadPoolExecutor(5, 10, 5000,
-                TimeUnit.MILLISECONDS, 
-                new SynchronousQueue<Runnable>(),
-                Executors.defaultThreadFactory(), 
-                new ThreadPoolExecutor.AbortPolicy());
+        TimeUnit.MILLISECONDS,
+        new SynchronousQueue<Runnable>(),
+        Executors.defaultThreadFactory(),
+        new ThreadPoolExecutor.AbortPolicy());
 
-......
+        ......
 
-CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
-    try {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+        try {
         return TestUtils.randomString(new Object());
-    }
-    catch (Exception e) {
+        }
+        catch (Exception e) {
         log.error(e);
         return null;
-    }
-}, executor);
+        }
+        }, executor);
 ```
 
 **当开启许多线程的时候就会造成出现许多的try-catch代码块，究其原因，是Java内置的函数式接口的抽象方法并没有抛出异常，所以我定义了如下结构(以Supplier举例，其它函数式接口用法相同)**
