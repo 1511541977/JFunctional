@@ -6,9 +6,9 @@ import java.util.function.*;
 
 /**
  * @author JJ_yo
- * @title: 包装自定义函数式接口
- * @description: 包装自定义函数式接口，返回Java提供的函数式接口实例
- * @date 2021-02-25 14:49
+ * 包装自定义函数式接口
+ * 包装自定义函数式接口，返回Java提供的函数式接口实例
+ * 2021-02-25 14:49
  * @version: 1.0
  */
 @Log4j2
@@ -19,8 +19,8 @@ public class FunctionalUtils {
      * 对JSupplier进行封装，返回一个Supplier，内部将编译异常转成运行时异常
      *
      * @param jSupplier 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>       泛型
+     * @return 返回值
      */
     public static <T> Supplier<T> supplier(JSupplier<T> jSupplier) {
         return () -> {
@@ -37,10 +37,10 @@ public class FunctionalUtils {
     /**
      * 对JSupplier进行封装，返回一个Supplier，内部将编译异常转成运行时异常
      *
-     * @param jSupplier  自定义函数式接口
+     * @param jSupplier   自定义函数式接口
      * @param description 业务描述
-     * @param <T>
-     * @return
+     * @param <T>         泛型
+     * @return 返回值
      */
     public static <T> Supplier<T> supplier(JSupplier<T> jSupplier, String description) {
         return () -> {
@@ -60,8 +60,8 @@ public class FunctionalUtils {
      * 对JConsumer进行封装，返回一个Consumer，内部将编译异常转成运行时异常
      *
      * @param jConsumer 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>       泛型
+     * @return 返回值
      */
     public static <T> Consumer<T> consumer(JConsumer<T> jConsumer) {
         return t -> {
@@ -77,10 +77,10 @@ public class FunctionalUtils {
     /**
      * 对JConsumer进行封装，返回一个Consumer，内部将编译异常转成运行时异常
      *
-     * @param jConsumer  自定义函数式接口
+     * @param jConsumer   自定义函数式接口
      * @param description 业务描述
-     * @param <T>
-     * @return
+     * @param <T>         泛型
+     * @return 返回值
      */
     public static <T> Consumer<T> consumer(JConsumer<T> jConsumer, String description) {
         return t -> {
@@ -99,9 +99,9 @@ public class FunctionalUtils {
      * 对JFunction进行封装，返回一个Function，内部将编译异常转成运行时异常
      *
      * @param jFunction 自定义函数式接口
-     * @param <T>
-     * @param <R>
-     * @return
+     * @param <T>       泛型
+     * @param <R>       泛型
+     * @return 返回值
      */
     public static <T, R> Function<T, R> function(JFunction<T, R> jFunction) {
         return t -> {
@@ -118,11 +118,11 @@ public class FunctionalUtils {
     /**
      * 对JFunction进行封装，返回一个Function，内部将编译异常转成运行时异常
      *
-     * @param jFunction  自定义函数式接口
+     * @param jFunction   自定义函数式接口
      * @param description 异常所需信息
-     * @param <T>
-     * @param <R>
-     * @return
+     * @param <T>         泛型
+     * @param <R>         泛型
+     * @return 返回值
      */
     public static <T, R> Function<T, R> function(JFunction<T, R> jFunction, String description) {
         return t -> {
@@ -142,8 +142,8 @@ public class FunctionalUtils {
      * 对JPredicate进行封装，返回一个Predicate，内部将编译异常转成运行时异常
      *
      * @param jPredicate 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>        泛型
+     * @return 返回值
      */
     public static <T> Predicate<T> predicate(JPredicate<T> jPredicate) {
         return t -> {
@@ -160,10 +160,10 @@ public class FunctionalUtils {
     /**
      * 对JPredicate进行封装，返回一个Predicate，内部将编译异常转成运行时异常
      *
-     * @param jPredicate 自定义函数式接口
+     * @param jPredicate  自定义函数式接口
      * @param description 业务描述
-     * @param <T>
-     * @return
+     * @param <T>         泛型
+     * @return 返回值
      */
     public static <T> Predicate<T> predicate(JPredicate<T> jPredicate, String description) {
         return t -> {
@@ -183,10 +183,10 @@ public class FunctionalUtils {
      * 对JBiFunction进行封装，返回一个BiFunction，内部将编译异常转成运行时异常
      *
      * @param jBiFunction 自定义函数式接口
-     * @param <T>
-     * @param <U>
-     * @param <R>
-     * @return
+     * @param <T>         泛型
+     * @param <U>         泛型
+     * @param <R>         泛型
+     * @return 返回值
      */
     public static <T, U, R> BiFunction<T, U, R> biFunction(JBiFunction<T, U, R> jBiFunction) {
         return (t, u) -> {
@@ -204,11 +204,11 @@ public class FunctionalUtils {
      * 对JBiFunction进行封装，返回一个BiFunction，内部将编译异常转成运行时异常
      *
      * @param jBiFunction 自定义函数式接口
-     * @param description  业务描述
-     * @param <T>
-     * @param <U>
-     * @param <R>
-     * @return
+     * @param description 业务描述
+     * @param <T>         泛型
+     * @param <U>         泛型
+     * @param <R>         泛型
+     * @return 返回值
      */
     public static <T, U, R> BiFunction<T, U, R> biFunction(JBiFunction<T, U, R> jBiFunction, String description) {
         return (t, u) -> {
@@ -228,8 +228,8 @@ public class FunctionalUtils {
      * 对JUnaryOperator进行封装，返回一个UnaryOperator，内部将编译异常转成运行时异常
      *
      * @param jUnaryOperator 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>            泛型
+     * @return 返回值
      */
     public static <T> UnaryOperator<T> unaryOperator(JUnaryOperator<T> jUnaryOperator) {
         return t -> {
@@ -247,9 +247,9 @@ public class FunctionalUtils {
      * 对JUnaryOperator进行封装，返回一个UnaryOperator，内部将编译异常转成运行时异常
      *
      * @param jUnaryOperator 自定义函数式接口
-     * @param description     业务描述
-     * @param <T>
-     * @return
+     * @param description    业务描述
+     * @param <T>            泛型
+     * @return 返回值
      */
     public static <T> UnaryOperator<T> unaryOperator(JUnaryOperator<T> jUnaryOperator, String description) {
         return t -> {
@@ -269,8 +269,8 @@ public class FunctionalUtils {
      * 对JBinaryOperator进行封装，返回一个BinaryOperator，内部将编译异常转成运行时异常
      *
      * @param jBinaryOperator 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>             泛型
+     * @return 返回值
      */
     public static <T> BinaryOperator<T> binaryOperator(JBinaryOperator<T> jBinaryOperator) {
         return (T t, T u) -> {
@@ -288,9 +288,9 @@ public class FunctionalUtils {
      * 对JBinaryOperator进行封装，返回一个BinaryOperator，内部将编译异常转成运行时异常
      *
      * @param jBinaryOperator 自定义函数式接口
-     * @param description      业务描述
-     * @param <T>
-     * @return
+     * @param description     业务描述
+     * @param <T>             泛型
+     * @return 返回值
      */
     public static <T> BinaryOperator<T> binaryOperator(JBinaryOperator<T> jBinaryOperator, String description) {
         return (T t, T u) -> {
@@ -310,9 +310,9 @@ public class FunctionalUtils {
      * 对JBiConsumer进行封装，返回一个BiConsumer，内部将编译异常转成运行时异常
      *
      * @param jBiConsumer 自定义函数式接口
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param <T>         泛型
+     * @param <U>         泛型
+     * @return 返回值
      */
     public static <T, U> BiConsumer<T, U> biConsumer(JBiConsumer<T, U> jBiConsumer) {
         return (t, u) -> {
@@ -329,10 +329,10 @@ public class FunctionalUtils {
      * 对JBiConsumer进行封装，返回一个BiConsumer，内部将编译异常转成运行时异常
      *
      * @param jBiConsumer 自定义函数式接口
-     * @param description  业务描述
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param description 业务描述
+     * @param <T>         泛型
+     * @param <U>         泛型
+     * @return 返回值
      */
     public static <T, U> BiConsumer<T, U> biConsumer(JBiConsumer<T, U> jBiConsumer, String description) {
         return (t, u) -> {
@@ -351,9 +351,9 @@ public class FunctionalUtils {
      * 对JBiPredicate进行封装，返回一个BiPredicate，内部将编译异常转成运行时异常
      *
      * @param jBiPredicate 自定义函数式接口
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param <T>          泛型
+     * @param <U>          泛型
+     * @return 返回值
      */
     public static <T, U> BiPredicate<T, U> biPredicate(JBiPredicate<T, U> jBiPredicate) {
         return (t, u) -> {
@@ -371,10 +371,10 @@ public class FunctionalUtils {
      * 对JBiPredicate进行封装，返回一个BiPredicate，内部将编译异常转成运行时异常
      *
      * @param jBiPredicate 自定义函数式接口
-     * @param description   业务描述
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param description  业务描述
+     * @param <T>          泛型
+     * @param <U>          泛型
+     * @return 返回值
      */
     public static <T, U> BiPredicate<T, U> biPredicate(JBiPredicate<T, U> jBiPredicate, String description) {
         return (t, u) -> {
@@ -394,8 +394,8 @@ public class FunctionalUtils {
      * 对JToIntFunction进行封装，返回一个ToIntFunction，内部将编译异常转成运行时异常
      *
      * @param jToIntFunction 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>            泛型
+     * @return 返回值
      */
     public static <T> ToIntFunction<T> toIntFunction(JToIntFunction<T> jToIntFunction) {
         return t -> {
@@ -413,9 +413,9 @@ public class FunctionalUtils {
      * 对JToIntFunction进行封装，返回一个ToIntFunction，内部将编译异常转成运行时异常
      *
      * @param jToIntFunction 自定义函数式接口
-     * @param description     业务描述
-     * @param <T>
-     * @return
+     * @param description    业务描述
+     * @param <T>            泛型
+     * @return 返回值
      */
     public static <T> ToIntFunction<T> toIntFunction(JToIntFunction<T> jToIntFunction, String description) {
         return t -> {
@@ -435,9 +435,9 @@ public class FunctionalUtils {
      * 对JToIntBiFunction进行封装，返回一个ToIntBiFunction，内部将编译异常转成运行时异常
      *
      * @param jToIntBiFunction 自定义函数式接口
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param <T>              泛型
+     * @param <U>              泛型
+     * @return 返回值
      */
     public static <T, U> ToIntBiFunction<T, U> toIntBiFunction(JToIntBiFunction<T, U> jToIntBiFunction) {
         return (t, u) -> {
@@ -455,10 +455,10 @@ public class FunctionalUtils {
      * 对JToIntBiFunction进行封装，返回一个ToIntBiFunction，内部将编译异常转成运行时异常
      *
      * @param jToIntBiFunction 自定义函数式接口
-     * @param description       业务描述
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param description      业务描述
+     * @param <T>              泛型
+     * @param <U>              泛型
+     * @return 返回值
      */
     public static <T, U> ToIntBiFunction<T, U> toIntBiFunction(JToIntBiFunction<T, U> jToIntBiFunction, String description) {
         return (t, u) -> {
@@ -478,8 +478,8 @@ public class FunctionalUtils {
      * 对JToLongFunction进行封装，返回一个ToLongFunction，内部将编译异常转成运行时异常
      *
      * @param jToLongFunction 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>             泛型
+     * @return 返回值
      */
     public static <T> ToLongFunction<T> toLongFunction(JToLongFunction<T> jToLongFunction) {
         return t -> {
@@ -497,9 +497,9 @@ public class FunctionalUtils {
      * 对JToLongFunction进行封装，返回一个ToLongFunction，内部将编译异常转成运行时异常
      *
      * @param jToLongFunction 自定义函数式接口
-     * @param description      业务描述
-     * @param <T>
-     * @return
+     * @param description     业务描述
+     * @param <T>             泛型
+     * @return 返回值
      */
     public static <T> ToLongFunction<T> toLongFunction(JToLongFunction<T> jToLongFunction, String description) {
         return t -> {
@@ -519,9 +519,9 @@ public class FunctionalUtils {
      * 对JToLongBiFunction进行封装，返回一个ToLongBiFunction，内部将编译异常转成运行时异常
      *
      * @param jToLongBiFunction 自定义函数式接口
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param <T>               泛型
+     * @param <U>               泛型
+     * @return 返回值
      */
     public static <T, U> ToLongBiFunction<T, U> toLongBiFunction(JToLongBiFunction<T, U> jToLongBiFunction) {
         return (t, u) -> {
@@ -539,10 +539,10 @@ public class FunctionalUtils {
      * 对JToLongBiFunction进行封装，返回一个ToLongBiFunction，内部将编译异常转成运行时异常
      *
      * @param jToLongBiFunction 自定义函数式接口
-     * @param description        业务描述
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param description       业务描述
+     * @param <T>               泛型
+     * @param <U>               泛型
+     * @return 返回值
      */
     public static <T, U> ToLongBiFunction<T, U> toLongBiFunction(JToLongBiFunction<T, U> jToLongBiFunction, String description) {
         return (t, u) -> {
@@ -562,8 +562,8 @@ public class FunctionalUtils {
      * 对JToDoubleFunction进行封装，返回一个ToDoubleFunction，内部将编译异常转成运行时异常
      *
      * @param jToDoubleFunction 自定义函数式接口
-     * @param <T>
-     * @return
+     * @param <T>               泛型
+     * @return 返回值
      */
     public static <T> ToDoubleFunction<T> toDoubleFunction(JToDoubleFunction<T> jToDoubleFunction) {
         return t -> {
@@ -581,9 +581,9 @@ public class FunctionalUtils {
      * 对JToDoubleFunction进行封装，返回一个ToDoubleFunction，内部将编译异常转成运行时异常
      *
      * @param jToDoubleFunction 自定义函数式接口
-     * @param description        业务描述
-     * @param <T>
-     * @return
+     * @param description       业务描述
+     * @param <T>               泛型
+     * @return 返回值
      */
     public static <T> ToDoubleFunction<T> toDoubleFunction(JToDoubleFunction<T> jToDoubleFunction, String description) {
         return t -> {
@@ -603,9 +603,9 @@ public class FunctionalUtils {
      * 对JToDoubleBiFunction进行封装，返回一个ToDoubleBiFunction，内部将编译异常转成运行时异常
      *
      * @param jToDoubleBiFunction 自定义函数式接口
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param <T>                 泛型
+     * @param <U>                 泛型
+     * @return 返回值
      */
     public static <T, U> ToDoubleBiFunction<T, U> toDoubleBiFunction(JToDoubleBiFunction<T, U> jToDoubleBiFunction) {
         return (t, u) -> {
@@ -623,10 +623,10 @@ public class FunctionalUtils {
      * 对JToDoubleBiFunction进行封装，返回一个ToDoubleBiFunction，内部将编译异常转成运行时异常
      *
      * @param jToDoubleBiFunction 自定义函数式接口
-     * @param description          业务描述
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param description         业务描述
+     * @param <T>                 泛型
+     * @param <U>                 泛型
+     * @return 返回值
      */
     public static <T, U> ToDoubleBiFunction<T, U> toDoubleBiFunction(JToDoubleBiFunction<T, U> jToDoubleBiFunction, String description) {
         return (t, u) -> {
@@ -646,8 +646,8 @@ public class FunctionalUtils {
      * 对JIntFunction进行封装，返回一个IntFunction，内部将编译异常转成运行时异常
      *
      * @param jIntFunction 自定义函数式接口
-     * @param <R>
-     * @return
+     * @param <R>          泛型
+     * @return 返回值
      */
     public static <R> IntFunction<R> intFunction(JIntFunction<R> jIntFunction) {
         return value -> {
@@ -665,9 +665,9 @@ public class FunctionalUtils {
      * 对JIntFunction进行封装，返回一个IntFunction，内部将编译异常转成运行时异常
      *
      * @param jIntFunction 自定义函数式接口
-     * @param description   业务描述
-     * @param <R>
-     * @return
+     * @param description  业务描述
+     * @param <R>          泛型
+     * @return 返回值
      */
     public static <R> IntFunction<R> intFunction(JIntFunction<R> jIntFunction, String description) {
         return value -> {
@@ -687,8 +687,8 @@ public class FunctionalUtils {
      * 对JLongFunction进行封装，返回一个LongFunction，内部将编译异常转成运行时异常
      *
      * @param jLongFunction 自定义函数式接口
-     * @param <R>
-     * @return
+     * @param <R>           泛型
+     * @return 返回值
      */
     public static <R> LongFunction<R> longFunction(JLongFunction<R> jLongFunction) {
         return value -> {
@@ -706,9 +706,9 @@ public class FunctionalUtils {
      * 对JLongFunction进行封装，返回一个LongFunction，内部将编译异常转成运行时异常
      *
      * @param jLongFunction 自定义函数式接口
-     * @param description    业务描述
-     * @param <R>
-     * @return
+     * @param description   业务描述
+     * @param <R>           泛型
+     * @return 返回值
      */
     public static <R> LongFunction<R> longFunction(JLongFunction<R> jLongFunction, String description) {
         return value -> {
@@ -728,8 +728,8 @@ public class FunctionalUtils {
      * 对JDoubleFunction进行封装，返回一个DoubleFunction，内部将编译异常转成运行时异常
      *
      * @param jDoubleFunction 自定义函数式接口
-     * @param <R>
-     * @return
+     * @param <R>             泛型
+     * @return 返回值
      */
     public static <R> DoubleFunction<R> doubleFunction(JDoubleFunction<R> jDoubleFunction) {
         return value -> {
@@ -747,9 +747,9 @@ public class FunctionalUtils {
      * 对JDoubleFunction进行封装，返回一个DoubleFunction，内部将编译异常转成运行时异常
      *
      * @param jDoubleFunction 自定义函数式接口
-     * @param description      业务描述
-     * @param <R>
-     * @return
+     * @param description     业务描述
+     * @param <R>             泛型
+     * @return 返回值
      */
     public static <R> DoubleFunction<R> doubleFunction(JDoubleFunction<R> jDoubleFunction, String description) {
         return value -> {

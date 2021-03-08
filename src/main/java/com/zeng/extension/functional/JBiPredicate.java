@@ -5,9 +5,9 @@ import java.util.function.BiPredicate;
 
 /**
  * @author JJ_yo
- * @title: 自定义函数式接口
- * @description: 自定义函数式接口，定义一个与BiPredicate同样的方法，在实际使用中，我们可以使用此方法代替BiPredicate中的test方法
- * @date 2021-03-01 10:35
+ * 自定义函数式接口
+ * 自定义函数式接口，定义一个与BiPredicate同样的方法，在实际使用中，我们可以使用此方法代替BiPredicate中的test方法
+ * 2021-03-01 10:35
  * @version: 1.0
  */
 @FunctionalInterface
@@ -16,18 +16,18 @@ public interface JBiPredicate<T, U> {
     /**
      * 与BiPredicate同样的方法，可抛异常
      *
-     * @param t
-     * @param u
-     * @return
-     * @throws Exception
+     * @param t 参数
+     * @param u 参数
+     * @return 返回值
+     * @throws Exception 异常
      */
     boolean test(T t, U u) throws Exception;
 
     /**
      * 与BiPredicate同样的方法，接口为自定义
      *
-     * @param other
-     * @return
+     * @param other 参数
+     * @return 返回值
      */
     default JBiPredicate<T, U> and(JBiPredicate<? super T, ? super U> other) {
         Objects.requireNonNull(other);
@@ -37,7 +37,7 @@ public interface JBiPredicate<T, U> {
     /**
      * 与BiPredicate同样的方法，接口为自定义
      *
-     * @return
+     * @return 返回值
      */
     default JBiPredicate<T, U> negate() {
         return (T t, U u) -> !test(t, u);
@@ -46,8 +46,8 @@ public interface JBiPredicate<T, U> {
     /**
      * 与BiPredicate同样的方法，接口为自定义
      *
-     * @param other
-     * @return
+     * @param other 参数
+     * @return 返回值
      */
     default JBiPredicate<T, U> or(JBiPredicate<? super T, ? super U> other) {
         Objects.requireNonNull(other);
@@ -60,9 +60,9 @@ public interface JBiPredicate<T, U> {
      * 对JBiPredicate进行封装，返回一个BiPredicate，内部将编译异常转成运行时异常
      *
      * @param jBiPredicate 自定义函数式接口
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param <T>          泛型
+     * @param <U>          泛型
+     * @return 返回值
      */
     static <T, U> BiPredicate<T, U> allowThrowException(JBiPredicate<T, U> jBiPredicate) {
         return (t, u) -> {
@@ -79,10 +79,10 @@ public interface JBiPredicate<T, U> {
      * 对JBiPredicate进行封装，返回一个BiPredicate，内部将编译异常转成运行时异常
      *
      * @param jBiPredicate 自定义函数式接口
-     * @param description   业务描述
-     * @param <T>
-     * @param <U>
-     * @return
+     * @param description  业务描述
+     * @param <T>          泛型
+     * @param <U>          泛型
+     * @return 返回值
      */
     static <T, U> BiPredicate<T, U> allowThrowException(JBiPredicate<T, U> jBiPredicate, String description) {
         return (t, u) -> {
