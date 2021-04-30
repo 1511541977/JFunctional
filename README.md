@@ -1,8 +1,19 @@
 # JFunctional
+
 JFunctional，可以抛异常的函数式接口，是对Java内置的函数式接口的补充！
 
 # Get Start
+
+```xml
+<dependency>
+    <groupId>com.github.jazng</groupId>
+    <artifactId>jfunctional</artifactId>
+    <version>0.0.1-RELEASE</version>
+</dependency>
+```
+
 ## 说明：
+
 1、我们经常会使用CompletableFuture来开启线程，CompletableFuture的supplyAsync()方法的参数是一个Supplier(函数式接口)。
 
 2、当我们在线程中遇到了异常时，由于Supplier中的get()方法是无法抛出异常的，对于编译时的异常，通常我们都会在Lambda表达式中写try-catch来捕获异常，但是当我们开启许多线程的时候，就需要在每个线程中都使用try-catch来捕获异常，非常的不方便，也不美观！
@@ -15,7 +26,7 @@ JFunctional，可以抛异常的函数式接口，是对Java内置的函数式�
 public class TestUtils {
 
     /**
-     * 传入数值型参数，返回对于字符串
+     * 传入数值型参数，返回对应字符串
      *
      * @param t   数值
      * @param <T>
@@ -235,3 +246,4 @@ public class FunctionalUtils {
 ```
 
 ***与allThrowException大致相同，只不过FunctionalUtils中的方法借助了Lombok，使用@Log4j2之后，使用log对象将异常信息打印出来***
+

@@ -1,4 +1,4 @@
-package com.zeng.extension.functional;
+package com.jazng.extension.functional;
 
 import java.util.function.DoubleFunction;
 
